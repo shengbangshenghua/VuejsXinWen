@@ -1,10 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>人民网</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<div id="app">
+    <div class="jumbotron">
+        <div class="container">
+            <a class="btn btn-link float-right" href="admin/index.html" role="button">进入后台</a>
+            <h1 class="display-4 text-center">人民网</h1>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <h2>科技</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" v-for="(item,index) in news" v-if="item.sort == '科技' && item.state == true">
+                        <a :href="index">{{item.title}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2>国内</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" v-for="(item,index) in news" v-if="item.sort == '国内' && item.state == true">
+                        <a :href="index">{{item.title}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h2>军事</h2>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" v-for="(item,index) in news" v-if="item.sort == '军事' && item.state == true">
+                        <a :href="index">{{item.title}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
